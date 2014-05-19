@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Food item:</strong>
+  <%= @entree.food_item %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @entree.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @entree.image_url %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @entree.price %>
+</p>
+
+<%= link_to 'Edit', edit_entree_path(@entree) %> |
+<%= link_to 'Back', entrees_path %>
