@@ -3,6 +3,12 @@ require 'test_helper'
 class EntreesControllerTest < ActionController::TestCase
   setup do
     @entree = entrees(:one)
+    @update = {
+      food_item: "Lorem Ipsum",
+      description: "Ipsum loreum",
+      image_url: "example.jpg",
+      price: 12.99
+    }
   end
 
   test "should get index" do
@@ -18,7 +24,7 @@ class EntreesControllerTest < ActionController::TestCase
 
   test "should create entree" do
     assert_difference('Entree.count') do
-      post :create, entree: { description: @entree.description, food_item: @entree.food_item, image_url: @entree.image_url, price: @entree.price }
+      post :create, entree: @update
     end
 
     assert_redirected_to entree_path(assigns(:entree))
@@ -35,7 +41,7 @@ class EntreesControllerTest < ActionController::TestCase
   end
 
   test "should update entree" do
-    patch :update, id: @entree, entree: { description: @entree.description, food_item: @entree.food_item, image_url: @entree.image_url, price: @entree.price }
+    patch :update, id: @entree, entree: @update
     assert_redirected_to entree_path(assigns(:entree))
   end
 
