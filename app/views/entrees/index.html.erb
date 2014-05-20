@@ -8,7 +8,7 @@
       <%= image_tag(entree.image_url, class: "list-image", alt: "picture") %>
       <div class="caption">
         <h3><%= entree.food_item %></h3>
-        <p><%= truncate(strip_tags(entree.description), class: "list_description", length: 80) %></p>
+        <p><%= truncate(strip_tags(entree.description), class: "list-description", length: 80) %></p>
         <p><%= entree.price %> plus tax</p>
         <%= link_to 'Show', entree, class: "btn btn-default", role: "button" %>
         <%= link_to 'Edit', edit_entree_path(entree), class: "btn btn-default", role: "button" %>
