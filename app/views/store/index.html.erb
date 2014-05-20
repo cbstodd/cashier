@@ -1,0 +1,28 @@
+<% if notice %>
+<p id="notice"><% notice %></p>
+<% end %>
+
+<h1>Buzzy's Main menu</h1>
+
+<% cache ['store', Entree.latest] do %>
+  <div class="row">
+    <% @entrees.each do |entree| %>
+      <% cache ["entry", entree] do %>
+        <div class="col-xs-6 col-md-3">
+          <div class="thumbnail">
+            <%= image_tag(entree.image_url, class: "list-image", alt: "Picture") %>
+            <div class="caption">
+            <h3><%= entree.food_item %></h3>
+            <%= sanitize(entree.description, class: "list-description") %>
+            <span class="price"><%= number_to_currency(entree.price) %></span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+
+
+
