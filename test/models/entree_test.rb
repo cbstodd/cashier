@@ -49,7 +49,7 @@ class EntreeTest < ActiveSupport::TestCase
   end
 
   test "entree is not vaild without a unique food_item" do
-    entree = Entree.new(food_item: entrees(:one).food_item,
+    entree = Entree.new(food_item: entrees(:menu).food_item,
                   description: "yyy",
                   price: 11.99,
                   image_url: "cheese.jpg")

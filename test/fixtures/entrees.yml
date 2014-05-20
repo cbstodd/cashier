@@ -1,7 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+
 one:
- food_item: Sandwhich
- description: Cheese pizza is our number one selling
- price: 11
- image_url: cheese.jpg
+  food_item: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+
+two:
+  food_item: MyString
+  description: MyText
+  image_url: MyString
+  price: 9.99
+
+menu:
+  food_item: Sandwhich
+  description: Cheese pizza is our number one selling
+  price: 11
+  image_url: cheese.jpg

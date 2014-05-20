@@ -2,7 +2,7 @@ require 'test_helper'
 
 class EntreesControllerTest < ActionController::TestCase
   setup do
-    @entree = entrees(:one)
+    @entree = entrees(:menu)
     @update = {
       food_item: "Lorem Ipsum",
       description: "Ipsum loreum",
@@ -15,6 +15,10 @@ class EntreesControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:entrees)
+    assert_select ".col-xs-6", minumum: 1
+    assert_select ".col-md-3", minimum: 1
+    assert_select "h1", "Main menu"
+    assert_select ".price", /\$[,\d]+\.\d\d/
   end
 
   test "should get new" do
@@ -52,4 +56,6 @@ class EntreesControllerTest < ActionController::TestCase
 
     assert_redirected_to entrees_path
   end
+
+
 end

@@ -9,12 +9,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Buzzy's</a>
+      <a><%= link_to "Buzzy's", "#", class: "navbar-brand" %></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Main menu', "#" %></li>
         <li><%= link_to 'New Entree', new_entree_path %></li>
+        <li><%= link_to 'Contact', "#" %></li>
         <li><%= link_to "Sign in", "#" %></li>
       </ul>
     </div>

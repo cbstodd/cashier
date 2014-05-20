@@ -7,4 +7,8 @@ class Entree < ActiveRecord::Base
     message: "must be a URL for GIF, JPG or PNG image."
   }
 
+  def self.latest
+    Entree.order(:updated_at).last
+  end
+
 end
